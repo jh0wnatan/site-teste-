@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1º ano de namoro</title>
+
+<style>
+/* Estilos CSS */
+
+/* Corpo da página */
+body {
+background-color: #ADD8E6;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Estilos do painel principal */
+.painel {
+margin: auto;
+background-color: #ECF4F9;
+width: 500px;
+height: 600px;
+border-radius: 20px;
+text-align: center;
+padding-top: 50px;
+position: relative;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);}
+
+
+/* Conteúdo do painel */
+.painel-content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 90%;
+}
+
+/* Botões */
+button {
+margin-top: 20px;
+}
+
+button:hover {
+transform: scale(1.1);
+}
+
+/* Imagem principal */
+    #fotoPrincipal {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: auto;
+    }
+
+/* Carrossel principal */
+#carouselPrincipal {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+margin: 20px auto;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#carouselPrincipal .carousel {
+display: flex;
+transition: transform 0.5s ease;
+width: 500%;
+
+}
+
+#carouselPrincipal .carousel img {
+width: 200px;
+height: 100%;
+object-fit: cover;
+opacity: 1;
+}
+
+#carouselPrincipal .carousel img.visible {
+opacity: 1; /* Quando a classe visible é aplicada, a imagem fica visível */
+}
+
+/* Mensagens */
+#mensagens {
+display: none;
+text-align: left;
+padding: 0 20px;
+margin-top: 20px;
+height: 200px;
+overflow-y: auto;
+background: linear-gradient(to bottom, #8dc7eb, #FFFFCC);
+border-radius: 10px;
+padding: 10px;
+}
+
+#mensagens p {
+margin-bottom: 10px;
+}
+
+/* Botões de aceitar/recusar */
+#termosBtn {
+height: 70px;
+width: 90px;
+background-color: red;
+border: white;
+border-radius: 10px;
+color: white;
+margin-bottom: 20px;
+margin-right: 10px;
+}
+#sim{
+height: 50px;
+width: 90px;
+background-color: red;
+border: white;
+border-radius: 10px;
+color: white;
+margin-bottom: 20px;
+margin-right: 30px;
+}
+
+#nao {
+height: 50px;
+width: 90px;
+background-color: red;
+border: white;
+border-radius: 10px;
+color: white;
+margin-bottom: 20px;
+margin-right: 10px;
+}
+
+#nao {
+position: absolute;
+z-index: 2;
+}
+
+/* Estilos para os mini-painéis */
+.mini-painel {
+position: absolute;
+overflow: hidden;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: 290px; /* Ajuste de tamanho */
+height: 290px; /* Ajuste de tamanho */
+border-radius: 50%;
+pointer-events: none;
+object-fit: cover;
+}
+
+.mini-painel img {
+width: 300%;
+height: 300%;
+object-fit: cover;
+}
+
+/* Estilos para os mini-painéis à esquerda */
+.mini-painel-esquerda {
+    left: 20px;
+    top: 20px; /* Ajustado para ficar no canto superior esquerdo */
+    
+}
+
+/* Estilos para os mini-painéis à direita */
+.mini-painel-direita {
+    right: 20px;
+    bottom: 20px; /* Ajustado para ficar no canto inferior direito */
+}
+
+/* Estilos para o mini-painel direito inferior */
+.mini-painel-direita-inferior {
+    right: 20px;
+    bottom: 430px; /* Ajustado para ficar no canto inferior direito */
+}
+
+/* Estilos para o carrossel */
+.carousel-container {
+margin-top: 20px;
+overflow: hidden;
+width: 100%;
+height: 200px; /* Mesma altura que os mini-painéis */
+position: relative;
+
+}
+
+.carousel {
+display: flex;
+position: absolute;
+top: 0;
+left: 0;
+
+}
+
+.carousel img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+
+}
+
+</style>
+</head>
+<body>
+<div class="painel">
+<div class="painel-content">
+<h1>1º Ano Juntos!</h1>
+<h5>nossa primeira "foto" juntos kskskksksksksk</h5>
+<!-- Carrossel de fotos no painel principal -->
+<div id="fotoPrincipal" class="carousel-container">
+    <div class="carousel">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNNLXB7iXV5fj10e0S_-gj5hAh12r_YIt8lwkaZ0aHuBHskRHuIsTBKitPDJ4o4KiVnEWmj9_N497AtqPsL6kezbRQYHvAToJabLYA2AjLb1WC-pW0BL9_z0Xyt0Zuupzvz3nLLbvUjqEYyxTmWqZWtOa3caJf5Lp5lhRscYXcdYa7AJsb358stJYyxsBLsAgAPYh2LwcZCo-mWhuIOBrV9QY10omgbZWoFuCVK3bVWZPs_T8bzbINjukf8IclWKjXK6OqgGc5XRhfAbeAaUPubJqK_9do2M8uIjR8r8GTYe9SYbKdfWAVEZQWJRBh87yeOOPCb65dEJYXMyVfSZLyCrO26Jn234k-TN5TZqPwJqLLvPUQpd7-P_Z2EvDcKax-ivWjB1ZgLk57R6rughlT-ou23A4qRmr_n2VU7odcqSQf4-GB1bIVS2TTugx1tQiOvx8LEUxEeU9K_SKEUjz-T2ztMUfk2c6mFiw9a-piABbd0PR6HDYZeP26cUwZYN5SeV0WmpG4m6VoN-GLel1OMw4erlq4e5sAB7qmikVdONkRCxpidVMGK0RaVwBWh9UCZI6-xRMbdPLOmIwF7BOMm1q0AB8lNZyoA9fVTN8QRtMTqEAmn-IjFxP7AW7XPt49poQCyLUPj7bhDxoR-WX4fZBwniWi8sQvdF7Ydf73OqJhDnlx8cg_yxZuYzMzeNOkflFEc0nz44J6hqFO6JlFtd9N1S0vqZhMF6WbmebKfP55VNOwUayI1nM30MkdshRZVFgsOY3i5y1NYLTh9s32SahoIt4UE9tWaIr5cvCHem1677GNjvYutvktQpzv-__m-9Qo7vlPjkjZrOEEtsIyMNYRM73e5OfoPQ7PZlfDyWMHd3HmcGMh_U6ryYmoq1cOrTInaUHT6Nxsm1OKqDrsjetO03jXzj_yIoKIhr4m3YkdmlFWpa0dlYkpJbGI=w363-h645-s-no-gm?authuser=1" alt="">
+</div>
+</div>
+<h3>Aceita passar mais um ano comigo?</h3>
+<button id="termosBtn" onclick="mostrarTermos()">Vantagens de Aceitar</button>
+
+<button id="termosBtn" onclick="mostrarTermoss()">desvantagens de Aceitar</button>
+<div>
+<button id="sim" onclick="mostrarMensagens()">Sim!</button>
+<button id="nao" onclick="mudarPosicao()">Não!</button>
+</div>
+
+<div id="mensagens">
+<h2>Do seu Amor:</h2>
+<h2>para: O Amor da Minha Vida</h2>
+<p>Dentre tantas coisas que eu podia fazer, resolvi criar isso aqui. Gostou?
+Espero que sim. Deu um trabalhão, mas porque você merece, merece muito mais.
+Não vou me prolongar muito, só queria dizer que eu te amo e que esses últimos
+12 meses foram os melhores meses da minha vida, sabe por que? Porque eu tenho você.
+Apesar de ser chata, insuportável e meio (ou muito) doida da cabeça, você é 
+a minha doida, minha chata e a minha insuportável (você é insuportavelmente linda,
+gostosa, cheirosa, perfeita, carinhosa, fofa e apaixonante). Sou apaixonado por cada
+detalhe seu, cada curva, cada sorriso, cada olhar, cada fio de cabelo.
+Eu peço a Deus todos os dias que ele cuide de você, que cuide de nós.
+Sou feliz por ter você em minha vida e te quero até depos do final dela. 
+Muito obrigado por tudo e por tanto, vida. A cada dia que se passa,
+eu me apaixono mais por você.</p>
+</div>
+</div>
+</div>
+
+<!-- Mini-painel esquerdo 1 -->
+<div class="mini-painel mini-painel-esquerda">
+<div class="carousel">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczMOFw0LaWr5eA-4LRc-jGWIqLQznoZq1BPmv9RwuUQeyd6uWaeE82pvxSBwkSj4zRrpviK6kiMNAdW8xXP8jYaCIsbnXIXVvM6wGqMJj0_urF3VKvk2BLsNJc7XjFSO79qhbekmdMUA3d-sKlml6MPzShGsBBipo_LfARONvgPZKowQz39FaU9uEbm7c_ku0SQKej7fESHoXJgLwts9g6iZ86x4APM57Ry1l8bViw_FOktA4bP0sedhakdvAqa5Hg9iTjHwKcNgcqwoinOtr-MiDHCa1HGDs0HgMBZo-U-TU5h4Fd9qmWh58SeQjefqnSWE3ODd8TtgpahVM1jjFOyY-SUJ-zy5_-ENHAtkfSuzQWGyikzPrM8S7J9KnfcrNCgvU0YtAXtC_Asfjel-sHngBdmpwuIde86O2p9L3Vj1x9Zcel5Go7-gjPfOrpudvUD6v59jjOo4rZhgTpJP1MmlNVKfC9wVWLSWCzd5JiQLMWMXs77BH3Ji_YJ-fKHTRELyZ86O5Tj5rRBtAgxbB6IEBIXQxTUrre3-HceluquWDxKPPCNFW0QLrB1Cs8_jy084m3-t9gYAskPXT4IfjGRRm_T5-UcSA6kx1JSTCdrCRGFTFsUBZfVTCyozsB3zZ9scpbo1kDgg462GRcqa9wQSGlaXYx91T1sA2GJko4aIT5tLXhBcAYMJSqfe6Sm7i44nopq1yJlP9wXpGWRMoNrG5Mk9whdft-iDFCvTNYeQlCM2VJ2exGOVuzAPHsTX9vI_W60idCCeDxRIqnJWlyX7gCs0UE7qhFucwRryw-vmI7Vc9d0Q0xm0E_bjDk5R1Tlv_1AdAvx6SxHdt_phuBrFu1H4Gp-RVxTJfTb1mvEzIGZ13Fn7MI6c0XNfWMYZIzGPtZKYhaepfbw1d7yj2P1BPSd69IIbXKW24baxUt1ZxwehDT6ow6DnRmT4ATE=w369-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOzw4HlwDECjUo8ExSYZozrKtvW21mRhTK_YDNxQqAMevW5YHYEr2Q-ntAxu6viMCESAfN2I_0Ye450kCwWPZtOLWLg7G9daOXSN8w8X5bfixQkJNzAuFTrd0DqFG5qINp9EWPtTlUTU-LA8RMOxcU9qg=w860-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOFnoXu68kblw9sYcfAHNZeGRz_KosX6Ih0IAY80RSWAkpk92kf7I-tTtMBYiDzGqLnZVuR40p7_6KMctNDunxmOYqEZXzIvVg6CFyBQK_sLAZTrWKsbM0B4j4zO-JaKqVtd7-9PSVHrKUqcd--lLjD_5PRndCoSw2D1XFYHoqGmFEM5sklg8MEoH2qWEXz5eEsELpuUnhCZMhrT7Hqd5fFgqFuSN_EDAIT6vT_wY_mKLnrdl0dtkzfTpvz5JZrNSpg1zpggacjM7qtG2U84HgrVRrv77SjscP2c9nNdnpC2DMYDe5ZlWnGCJK9j1fj-CL10OaBGbQqS7yM03FVjDIOhaht3ec_Ng4ejSlwU9JlZ8pIY-1V_qsUiXxSmdA7PgEQPQJ-qbQ7kqRuLwoTrC8zhwzm_moPGxDguoIXBUpKupbEb8HTRItPI1DnwQWjlHnL9R1s-KopicNwF7qGvypL4rihH9OJoNw9PFz2cCSicOKRLrZiOzqG4c7CBnVrvENzBitsTBZtLnA9aBz5JlHlTJNbeM1kgvSm5fe07B5eoF2OQdU0zXByM7UZW83aB2tyGKder6Xdqc-7e7n5_5nAr2zvw_6oGk99ZDSRye1J4Cy9tlfcyv_IFC8pfxif50-b0odQHxvDl1LRDeEhNqxDgAkVtU1hj36YYpAyXmBt-xcNoUvH81d4sAVAtK2rdPmRAxcO_SucKCaAZn_84huebg1V-GJA4BMwVO0tGYOmtq2i1VpHWiq89TZLgH6uGEheUp0Glg7GuHzSbwFoifdS-50cm2x6BKAzSkydXF7dllRY0TDGkGtp7iQQbwO3gXmllQAXAgWVWijUpzXuIGWXvIWmxun3fmrIUz3IotAExW5LC1dE6vcLAnDI-Um7k4VTw59koXkhL7xlkmY6sAI7vElZTx_NVNiuyyRTsQaVQt8tg6h_icxUFNf1uDs=w363-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczMqKioZk8EMvsNDlFVBOCIC63-Q5pK-FqNfUBNm4GbnvYgMCoj_9ge-S3Oq5YpguaD1GaIKZDGByVQ5cgUIEt2xEwco7u8LoHFx_Zroh5caPU4YzwN9tSMChXfYweSyGEfBL5M0SAPDSthHYFXzR12uksuAyLzfooyw6ka4kLFPMCGVz8pfyeeOwgfixzBaONGBL_NG5D5oZry6TVEU5a6c0zHY6RIX5fE2HKVaZRvkY4uCuaw_Lqcdb81asYZB4BqjIS_HDzTerJAi1uSp-dhERavzlboSKFSpVqEiE7ydLfoBcnxgTRFScGtdFjmg7tGyO4sZwOw90iW8VaO1VCkzvs783oqrCsD2EnS0uo-_1LkCiSCkSzD7b7PH14BigNFUCpHfNjQCFkCTG1ovoxWvYSnCDpMJPIg2EJzBt4mcxS9cArDJDHRzREq3d9l6pcL8ayXUi9ldWb5IaPjW08W-S_YNrL-pflzcXp-ZiIWC4c83hr1e8keR18zm7a3wFz9xBVOqOcGlmiGxETtYg38gMkG9BW8LXkbRVG2n_cjE1CczbZjeM-LN8crmcoFXiQFw3SeXKy2MzfrbSJN2G5-D57w5OM-5FNuaYoo9e9Y6WNN9o9j9bpxfGaB0WtrzK4X8VYlN7b1JKAyLKWTxDA2GMh28TrEIy5qGaCKPIF304lmLo9td9sI7N2KrT0CJzi8jMg7o2ul4wJ8dEbcrgExamM6wlgQmaqCmSzwGUKj9Dxmp_jWZZ0ifaaSZw87sNiTtJGafcnaDsWeJOi_-pVENaj52NH7Rai6otVsQedG2pMgtNifyU3ttPqf0v3lUcyQwzStisOm6Ov1EUV6N60P0SM6WrEgfGlkEDOZxloKj36Sd-CqedU4yMW_ZsBgf-952LWwnIBHoqQS2OEMBhr8bC8ybsg24mx0gCVKJBDittMsgaauAOeEnjytDjlk=w504-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczO4m4Ij3oiYex4oRxfKuRgai2TiZvTJWDksB8IWi_DXIIMXzLSadl94XtiHDwMxrdmxJG0UssivV9IY9Oz3XHaWtVXeQmmsO4MhndYmByMrpEajj07A-QKZU1fWtMGgnwX6mLsHHDXHxit0kUZ2zx4t_eePAdLdxZHJdNX-btCgGCg62GQXwX39xO_ln_-7lX8DOhqbF1j_3ukwdnH9NnFt3X96rEQFtvwKm3mWlM6aP9Yz6O-3bj2q8CTV-B2v2n_MyZDg0-7jkw7OG0tM7F9UsCJvR32PUKKFDCtCE3OaZS-4abJutDSc21gPsk7FqDAzBjvTUDsOgfqm0wYR9L3jw8e6JOxrrx5Y1UffXKb1OfY-vb5g_aWxCCyYQtNlNJUT9YgX3NlI2dME7j8g0YkF4x5zdPNckgpchDeG9clvwPFsl85z6SP6M6yYQSlkSWlaVEf-IKKSgu74cnN-IcXU-NffHMxr8LIXRtgihfGwYkw8CmcG6c3IWjPE-S_JZpdq3hUmaaEif9VP9EIVWzTIOAkmzhgnY_BLhO21TWqRqahFisygl0acFI1ruNYKc_u8Ph8RUAGkLHO6eS2PJDKg96mHBvU5cO2-qgAM8BA-3tFv_DJ1-pBGbP4SCfZ7ZylSgmKjWcN5t4SnkfyGPAXFQc4_AJvzw3VJvEazWAz9bXvBBpFtwnDb-Kvwuykwd3uHg4atocQWu9qCDrQjjdPYGVfbHVnQe0pjZZ9P7rllUbqpvXf-pxCZ5rqwaUYM3AwlgmgBSuTCSmz8ZEc-YPNwfUIXErS1OjHT0GIMOq0Pe2eN2goh5eFmGa9rhJzSo3C-207iUPMJguYlKvTKVKgdoEQZtcKWFLFrliq2PiOOUAePgsX_DjdtJKeJFCr2dCN3XKi8WeDGpPtmMgjoYExiD-kTjAwScpV4UXsJyHwf2KpgxmLhrEJk8NhFwso=w363-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczN3hqbLY3rlnGrz0y9kxZntt4OOeFf0chtRWBlCH2AYc7TevGvuvc5cH2qg3aIkDv9qLFTxj1KURidzqf3G0lB_n6JOjuBzXSdSi6eozax8QQB4gm_zfAGsTWDzS6-jDlmjGbkp8h3WLY0DYVrTmkOJkQ=w484-h645-s-no-gm?authuser=1" alt="">
+
+</div>
+</div>
+
+<!-- Mini-painel esquerdo 2 -->
+<div class="mini-painel mini-painel-esquerda" style="top: calc(50% + 10px);">
+<div class="carousel">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPse_xVQRuEdHwxy-PDZilpMz9sgLul4X7PH7Bd31FwbASxy1KV0QCp5v9hgkiKydQ60_6YTyX6cUYOcEnfKuC4Ae8MbrytOUzPfr9J60p4tGVRuwSgv4nB6EKm6qzDcCwiTe73edkSGTSTp-EQFc5abA=w443-h645-s-no-gm?authuser=1" alt="img 1">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPkGT8m6GH_D5gIgVtYtwrFr2yt_IvgQeQJx9tSuUnduu6eLEMSGW4voU2etM7CPk1T5gDMgx3-SCcMr5vQcCa9SeP5m4UF9Ml5CVARTKUQrAVnM2hHknfJZhHfsAqvytC4a5qnM2_qdP2ISRBAqcl-_Q=w664-h645-s-no-gm?authuser=1" alt="img 2">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPwYI5kXrFXrQXKbdGNk-93NNsWW4Bh1_EWOnGu8jF6xUUOrICzpSEarqYmG8BfcVTxqN3vS0xTtLqCSY2WV8dNoyQE5-pFBTAuRZx_rOQRWArGAq-4o5qnvVpHrJSZtDpiJxXVMwM2P4ZzV5UBBdFbEA=w484-h645-s-no-gm?authuser=1" alt="img 5">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPypXQv0LfvnacB5j_DB3houovySsKi26GIU0XVhOcAydC_y92SSaEntv9hSvPGyeBIdBpOi9Flh_11ON-AfgW2YeTFKi5Txy5pibjtGzGPcux4UlAhqlGmG9N_CwjWpIQJB-dKR52WRE5Sc3zK8uScOOindL9TMAO36Fgn62esloAGBuKrzvegFVJmxyVbeHeKVLEDjARgCAfRmhG9cZ9SFumFBbTZaq8nkv-i1xs0QkFroUog1AV9IhFOJmKajjqHTDzzhemYOu_bCuG1iMirGeMYBLCmKwG9Sa-gQ_tlehllHKH93sGeQ1W024voH5_uCKjlM2FAYrcvwoGXAKJoB9_RNBJqWLkjt5949p6QPCa9VLGooBt6U_R4SkSCJ7iloy4NAcHDVGOMQgSnwHLq1g6TJLL-dLj-GUjoI1dzF0ZsKXf-9yYCYLBLupegzwrqPw6tR91mpEX5df5ooBZiv1aJlBw6toCZ2ZSfrp2P2WQCcOU-HecsA5d9962AExm67xOfydgyNl0NM1qTgt5UasJF-pvatlFul1ZZnfOw3hqxDeCfM-QLRratcTeqZM5TKmRiAJYBjT05JUGEzH8UjXP3j9Iu09CxmJzqaJDyNAMfMFD9Eot7eD8B1u2bTN1JB7sOhZPQsw3t1Sxr069GE-FatlKE0TsQdGhWBmU75Z0Ug7hb9Vv7Kg_dlgfFZQb8E0R1yvOyBGP8j_-7PNd8ZvFwj2jsZTaek9QqML48bS4IM0wCA94UxZ9j3Fg0WFQYq8e1otEUOE2qBVknrTFeyObc2UoengugbyLW-OcPz1SFTffVwHqGXOymUxb6uPSTGO-LhUkb5Q7_vts1oBoJbiBOz76Bo4sihC1cNUau7hAam01WrJhZ4WmgXZIQrckYz2AtCkU6j1gJHwLbbo-p5roHKpQf2xSYyePL6oSlV3l4OT2CVDCA9e48jP0=w484-h645-s-no-gm?authuser=1" alt="">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczO3xFNZ9dwKEe-SHs7ekaiYM_KzHIwuFqqeTaD1ikhvnqHL6dAZCuHv81w6UFXE-IA7b9QvP6Am0ijMWhf_PXnxmsm4vjYmgPLEsJLdaXXpnRE1LgjLARJZtBH8dJp7vFy_NJAYcjcPppbwnzjRl-TQ0FOtQ19jtfrnG_tr59agu49ca0whepXSDC6zUQQ136_dhnnLhpTQME_BqAY1Z2nCNPmhyj3sSFoefXhTXrI9SQheevi2GeF7sFSNB4-gy4lzXI2RcQFogY5vcv0nHfnUxNukaqe0U_pBL003aixWtiPY-Gf81j2nO4L7_6pur5yUg3TpMPPWC5qEMS-P5GFi3N29D_Ymz1fMdeaVL_pWw0TKp1-gI1Zqp0Uj1tBpotTwxhBcAG79RYoGPIf5EOvJdBCO-X2hAm5aHZSTeYdLqoTcDqrFnTLkx1LP5BU7Whn2Jb_1n8jPG1tn5cuw-KV1V0m5nVQmBetCzfplOX-UUFr_MtCDFR3jRw2mkjr1VuzhC8oLNWXHznJ0yaUIXH1XeEzCpqI-24XWrb_TFwEnDJg_Nrm9G9YgSHrhfRBIrbuiBZH7QQR6OWSuJLfaCmpuGOk508Ov3lGaHv2Uow84arobpa4hOb19ocUYcthXhV6B-qIfJCfUQD08TFZb9B4cuDiszM8rzGI2W0Lz6T1Ik3LhjPsKJwq93PxqpnPtRWzZR7HjmfJ8-Itx-eq22-ztt5ZUWabcnBHfSvPEyvnkLspI9lNwVwWuP0U1KKepPt2OllaKev3eELwVuQ5oXV8YJ24hyoHNFwS9HBYooalskjIzta-aQf7dS5eutnCdwZn60PB35lSJNS2WSU_ttxp9-xH_iKrwsMqHSpQppiTNVBAR8uUV9q61mocLC3RCNpQOo-uCUT9G9KOdyyqwi_q-7ksrOOsMHZtyYn8WpHt723at2PNG4fsdqWk8lgQ=w363-h645-s-no-gm?authuser=1" alt="">
+   <img src="https://lh3.googleusercontent.com/pw/AP1GczPWMNYwg1ZdGT-0UKG_sb1eZLFzswccKydm-X9gOTlPikok3Vjf3PqLhgJpeu1zwPNfcEpTUKYpvPYlXeC2zhWoIvtlriRf8xMkvQTsjKbUfhdYoHY3Qx0tYDosKju_eLsKGuyxbMA_h2Qmrje8EiW_ky_k1ZKJbs8XPw9ZZ2MjzsSra1t_gCNzebar-j59LsYlpWOd-BlEUqnsdAFjFolDriQ-dfe9rJbLycOKwQ1U5ttjJrfilxHmacAahhcpbpO0nbDnf1p82S4yj7edAVcoFs1G8YZZ2tiDnYTfQu1A1o3d44aqbpNp96zpzMNzNLuf-7oNKPzczs-AOuCZE8WR3DGEhUVjrDljhdEBmDMmEXA9ag8qf6pZd59NLR-T8fvDTBMRlZB0guQ_1EIjfBJxttPRsWa5rjGXjyDp7UEcMOAE4pj1UWvJEhujkBEdJx8EMg3iBe6jIrR121l9MCUCSE8h1DrWzprfZnmElY4ZLgolq__rYZOfyYP6kmkSsOw6D_eSxr4qp5XlVKQVeN8J713Dp5wUtNl131dR7ZNCtsGgcFm6itBkhd8k2VwXmBzcogi5XXCKm3d8YMU95oRcbeOZ2qL4EEzhgdKVxt-PS05HGc-BedcX2C7ZL9msZtuz1fwZDFGApeDIruQu9p8Uzt43gFY93Mn2HV3dxX0S6Z_4g1b67W7Aa_m6Y58aCgbBHPPgjvykXwcGk74u_-PMeKrSm842fIkfulic9_TwsAr2tXDFzw_j8POiVWw000JINf1SJxk_BeDNgI-JqrDX8U9E4z3P23iruVLHs6t8fUtuH0K8LPkN1n_cAKAvMcab2Mpq2NNBQsKbz3qW13vDg-JZCRQ5yJwowfn7F5kf68MiM9fl7-CDpqqLfYzy8leGxfD2xH8MviLiLWPyCckLFY8WdGtIhSmzc5N3YdLsw2dSmvSW11GDvyjTaA4=w363-h645-s-no-gm?authuser=1" alt="">
+</div>
+</div>
+
+<!-- Mini-painel direito 1 -->
+<div class="mini-painel mini-painel-direita">
+<div class="carousel">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczN31Ef-VXxLSTWuKZHdJYs9-PyrDki1IlvZEofIsRBB51ZpVW_WY2Wuj-oyqL2KuE1D15iv_OfFrQ2L1S7J7ok9X3DLphpKTdST7eZeIb2GvBKEiAV5S6UrHcv0hR0lv1Ot5cT_eDYTF4cbFu91Z84RdPMOz9isQ2bKp4YY0-IeVq8BkUnwDXrxNGnTRmwBulDyXRed4lOrWvD8nDQC-ntHSTmrP9yrY1ru-_XJWK1pPVKqHdLSbMMedeZ0nFCLW6afOSushqLSrCFxm88xml618S6DDRXMbl39MxvYz09fp58jA-dDdBcNxExjdV53dBO-pbdwHgYt7yiIgDJTe7go4b-htz267qn9Twy7mha4S-veA7IVVeEddhtQ3U-BMAUIWrwvQpGoV3M_LqFIlpcgPfQlmhO5jZkgId-F4Ma5flgKvWqKO95yru2DrUpPY4J7YiPhf3urufe8Zni-tUjT4b_7dDoUEa42EgDvaZb7-kxSLRhw9-6cwILR_vMZfrRfGzEZN_xSkQxy_bODlME-814nhkg8DL1gdA8ls1UMKvecurA2pTegOMqDAjFek7Ga0uqgn0RDhzNqkxwTXt-UMNjfTO-kuuDP6VxoVo-6gThs98D_EQdCXRFZrolfHxDgA6AZoL8hLdM-IFxZsoSOF6YssJQ00MU4WjUqygqpQivrHqYtr7IwqJlxeP6EIiVS3bge1Uqwc8biY2t-AhI22HhTu7AbYVGjzOPY3Et9qMT_MU0dJvhHWlCNjaBbnH9B9q1Z0iLHw_gsKMLXv7l6Hfv-W7h5NTbpLulloJlK22UYi9UxLlv1mJjeUd_-JQ7z4MSGjMv9LQX99qZCJJmnixuRwOzDYIXxy-e0PNYWQijkKsgMnjH4saR2BEkuhaxcGnDHviJs8cOQuwiRV-zy9yxAO1_sG_msmeU-Y_r7fWEwKFu5iGHb7TWagso=w363-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOkFDCqbSH9AFttYWKvGw4kIha2_odYOwVSn7aNIshb5rDn_vS2ep2yhmVU6H8RWXWDB6hbKxfF2rSG6bvj18PN19qiQGGqYVoJJqpznU54ERDAXZokQIWLHVmhen99OCZYjI7KwNnfYGt8cuszKypvOA=w600-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczMPwpBbgMtFVLeZQrzFiSA2z_dU1S6M5K5v6W64fRz-MiBnZMx5ZsqqcLIARFq7b4AL4FOaFtbfph7AWkxIJhPu5MOvehS5CQasfk3zruFlALLMhHG_7wJhDUpvT8-XIuCa6XvaiVdXMk3IA7B8WSLsaw=w484-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOzw4HlwDECjUo8ExSYZozrKtvW21mRhTK_YDNxQqAMevW5YHYEr2Q-ntAxu6viMCESAfN2I_0Ye450kCwWPZtOLWLg7G9daOXSN8w8X5bfixQkJNzAuFTrd0DqFG5qINp9EWPtTlUTU-LA8RMOxcU9qg=w860-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczOFRx8bg95KEYDN8Fbm4LXt1vAoCWOQO5ehWgDtm--hRFiJ3rTCEr9F6d5kYKrOl5khm4ghBliRg9DGTRRHppsydz41z-OydSMlmxtx7lr4_eP1jT64VQIyjhzsHLcw6klE54IhZ4lq7QJMdmWCrWRalg=w484-h645-s-no-gm?authuser=1" alt="">
+<img src="https://lh3.googleusercontent.com/pw/AP1GczPncp03-jT8kFIqJjTtSTBKPz_bCDOXiOtDBqOJY15y2ztylneu4w12odS2yF6fdxaj_pbVYl10n9F_VVMkGxT-ElSPXNVxBJbNdum_jbAbhNSj64fak4fNvX3YbkosgGdS8ntPBMYk9PVaieTczI6FI2b13l9jlP3WxaOD0SKi1J0tyiUVztsJ3wIbifP_C7lVg8AAnwcfiGPQXG7zd2qi5E7N-KzlHquVktYykU3MTZx_iBcdVAPSdzeoC18k3WcmQ-gGc16kcYjZC-62JsstG3yaDRjVwFj9O0gDCw62NFepPiLbMhzWOhwQktVXgjvtt-bThh8mlAO7IXQO-eDn5eayrhE552wWxmL2l1FuQPBl6jguTyKt2ZHoVOu7UUVzTOJo05JV3i9v9QBEw0mopJBYXiKcceLh9RFIIjCXejYMPXqxMhTFfE7e2oJRprbthVYFV6SebqdYbLiJ9TqgNByWlvFESmAWW-OGj-c4b-ZJ_D3-UhypHhR-PBegDrTMPRYE-fJkJuEni3mLeCjusU1kHaVWBZ-BLJzWoJyUEOzP1zR0MdRSBsfCg4RkaBSDZZ_y1_IN8IhiwPjRCnjp-TgcKz89nrp-U4y3EtU57jVArzRCfeyKqlQ4knDDzMWx_8BxEwHjLdazAG6ex_Nj7-qeyHyKbX4Lx7YEgCNd-2wnTNHYlEq8MNCXLoRdeacOasqeLTn3NiJrzckOM9Qfd6QCUlSq8uwtQvj42YFGm_jBDIYuT3oPZprTg80NHxAWh6ddzwv_G-vJPnPpFmtHIL3kHouE0qwck2qMfPlsirWb2OtjfR-2Pc9EYUBWNSx2WecHz3_RFgPI2GLNgaff-sPF_Z840YZrOdIjpowbo7LhbNzD_2p5_Qp_FN4KpPNTXxdWNIEvYrgBV-cMcRAmq4Gq1lPL7a0FUzEWv3om1LDLnuJll8BXaX07UyY=w363-h645-s-no-gm?authuser=1" alt="">
+    </div>
+</div>
+
+
+<!-- Mini-painel direito 2 (inferior) -->
+<div class="mini-painel mini-painel-direita-inferior" style="bottom: calc(50% + 10px);">
+    <div class="carousel">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczP94RVfz3QhI2OHiSJGGLi1Yhhqt0CxuZ8o9ghIm5wfhoF8t9R5aJUaDwUUd8Am6VtYie-0WINvMv_iqUIqEsXSC_nlK-Dy8YTPHCuiiTHTuKA8m5hp5UHsl1yFfXV7xSDLSqiBFeD02hKupuzBa8OCHA=w484-h645-s-no-gm?authuser=1" alt="">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczMVLPej7u_ESblDKNEBxpGujpzePySGRr8u5BGniNeya3d-sNuNa8ciChzS8d-UFaSDzvm_NNmCrAdEwuP8ok6ft37nH5vsrOvx9HpDphhyDGiq8qd4Du827GCbLrGtvTeRbJ5-PHD4ObMuIHWwa27I3yzuhutawOp9TPGbMm6zVRANg2ndI8YMIc0CbVBJrB68lr5Oi7KobzJbZBytErnLrfFVz1AGClH96mdZTx1UYQRwykyiKiVqEMZJSY9md7ofLL7H_7b-Tsj_In1Xk0pWcRqFeSlXjjuFVquqbBvgt9r8IYZcynYbvXKxsYpyTXbG1mOSiRT5yeDQi0wK_UT_XsxhkzYiQvM2IblbD02kFl_JIQUItxTkmcPlCXgk8-0Q0W_hZTlyVvTuc_4TYnSNkEI-d-o4J2mbqOYtkWINjWdaBiiudGvIo1Q9OsbjpX7b6FuyddbovUt1Ac1kBE6cxZqVxNVvnXJXtY6VEMswOsmlHwjvAoTkEEm09S6SVQDVD_Ld70WZZujn0TEe7csAO396ybgmVFWbevYHx5X2WgahVbwszoKHR5cVnbqFIqDtv1IrkrQ-RRE7bA-QsAPeU6AuO0ovzMicWZF-m9MDMU__d_ZEc-eKmuar_wIhEzLembC5A73lwb28UtkAGKZND2AI3aHSv4-hCkvd1NpOlOhx-UPYW-ZNdOnh3ylTQCgMagEW0t0tWsQBRJQmBNX8-IlnQTkgqHoH5m4-WZ0YnCGkZY8KDWA1S2uG27WlrARFlOMrFptB6s8m2BLFGUeX3JvowOO4b5iMI3ADjMEWo6dIno0dr1NLvhOG8sZu76BaRVYgJz_i1-yAHjKpI0IcTc1znvD0Q3o6IZu9e0rAgQo8043BcXMsNq4Iz63sq4-sgxFJz6Q73ekgY1OkfYCWOmcPLYZ8dTJH1y2k_Kwg4Ul_tBGffh1Fg11bRP0=w484-h645-s-no-gm?authuser=1" alt="">    
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczO6gdG1g6AHP8_27ht0yMQUh39tkNQ4LGd4JkZM2ITm0N5jmDaxGJnkGyNuEY93wkx43VvBwsjmd7KSOn9VuJQuexuO-DhefRj9gzXpa2Q0HH5FsPIm93K8Rf1mJm-6gUDyQhNq46q-sN_-1ralgQumBA=w645-h645-s-no-gm?authuser=1" alt="">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczOZe34RXeecY5pDBnztQQqMim0WGr1Q4M1RGo2B_GE6ITYD2qyT6scmeFuXhXi4M1ofI4u2ktpwRm1RNQBxYk_ULVCS2AofdE5245j-lIptXIS1qRKzIs1O3xFwKeaImhknyTUkLbgNBAgcwM8-WIFhnw=w484-h645-s-no-gm?authuser=1" alt="">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczPERRpQqwMlQvhZmXAHxJ70Z-2NrS-zl8-WgRtp5e2XsMHLVUadfnTR8d77eqzdXELXun3h8Q2EpUZnQHpFSyfMfGGMFZnNtI4G8WhNBI-AZeVzQ3YbERzcBQCBbpDs2_9HCWnBwwHTkX4ldtHhUMhQDfHJXPqA6MOAQ-Q1BvH5SpFiLMSJSlM9grXhg_c2lEf4SOfmcSdIPYDz0IMvAWpP4n1HRNqNYfSN1t_vuZVdy1epTPpbsmomJrn-yk0HOPrxBAz7GJouq5EyBQ-eRWjyeo5xOoR4m37R6WzlkCMt_s4d7pEdeFgLcroqH0v6j0QztX0KK1i_yUQIHhnuaqzbDcLCJD9LPYraDWJDzyPzLXPoHrgDjUvWC39X8phCvyjGLHQjT8CbLTUCEhU0jyt3KWSzoGPKEn10PELJY0cEAaJtUsTjvOAyr4AzEp-cWpv9dX5hVYzcAD5s6hqLQA0XECkkjJNqM-wdgIj4DOVFY5EUCiGS3u75KuV91GbY4monjM944x2vmNm073qXsKp1yCsuLIyoaoaDhHCBpSNTJgD9UTODrqItmo4hoVu11FpE_yjYC-rCtXFF8YmUlVUr2OIAlT7QfqvWTp8041njVg7UpxxV4uxBswSAlX2JKvCGGqVOyJ2wPZ-La2PpeWUTxLZu15kbC9ldno2LgGrB5nfL2DVO6PivGY3Ef-KNnpHbVLTrSYWewFWfwquxrs42hNZs8kF089Os6L9hPnana5ZaEz2GXy9wHLdIXhi37y_yyYQN3C_cl_q9wfBNt5l66E1Fj5OBaFVly4oSoOOP1Yu5JZVdXkAQcSfYn-eTei7NDcmlVG0XiTGNZNVH4C_F3yPHvnQ0EJi5YfjsmG2jS6_qUoIN91UsSx39OJ4faRhXmbN3UeYyH63XCaG8oVSl8bmBnORuo5XxD5-OAgfssIRs533Mia5kZHlWeGQ=w363-h645-s-no-gm?authuser=1" alt="">
+        </div>
+</div>
+
+<script>
+/* Funções JavaScript */
+
+// Mostrar termos do contrato
+function mostrarTermos() {
+var termos = "Vantagens de aceitar passar mais um ano comigo:\n\n- Companhia constante (até enjoar);\n- Doses diárias de carinho\n- Alguém para dividir a comida\n- ter Admirador não tão secreto(eu obv)\n- Um ombro amigo 24/7\n- exercitarei todo dia o seu fruto da paciencia\n- ter eu na vida já é uma vantagem tbm né?";
+alert(termos);
+}
+
+function mostrarTermoss() {
+var termos = "obvio que não tem desvantagem,comigo é só paz,Amor,sombra e água fresca";
+alert(termos);
+}
+
+// Mostrar mensagens
+function mostrarMensagens() {
+document.getElementById("mensagens").style.display = "block";
+alert("Tava nem doida de negar :)");
+}
+
+// Mudar posição do botão Não
+function mudarPosicao() {
+const naoBtn = document.getElementById('nao');
+const panel = document.querySelector('.painel-content');
+const panelRect = panel.getBoundingClientRect();
+const panelWidth = panelRect.width;
+const panelHeight = panelRect.height;
+const btnWidth = naoBtn.offsetWidth;
+const btnHeight = naoBtn.offsetHeight;
+const maxX = panelWidth - btnWidth;
+const maxY = panelHeight - btnHeight;
+
+const randomX = Math.floor(Math.random() * maxX);
+const randomY = Math.floor(Math.random() * maxY);
+
+naoBtn.style.left = randomX + 'px';
+naoBtn.style.top = randomY + 'px';
+}
+
+// Carrossel para os mini-painéis
+const miniPaineis = document.querySelectorAll('.mini-painel .carousel ');
+miniPaineis.forEach(carousel => {
+let currentIndex = 0; // Índice da imagem atual
+
+setInterval(() => {
+    // Mostra a próxima imagem
+    currentIndex = (currentIndex + 1) % carousel.children.length;
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}, 2000); // Intervalo reduzido para melhor visualização
+});
+
+
+</script>
+
+</body>
+</html>
